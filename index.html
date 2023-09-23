@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <title>CSS3 Box Shadow Playground</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <h2>CSS3 Box Shadow Playground</h2>
+    <main>
+      <section class="settings">
+        <div class="settings-container">
+
+          <label>h-offset: {{ hOffset }}px;</label>
+          <input type="range" min="-50" max="50" v-model="hOffset" />
+
+          <label>v-offset: {{ vOffset }}px; </label>
+          <input type="range" min="-50" max="50" v-model="vOffset" />
+
+          <label>blur: {{ blur }}px; </label>
+          <input type="range" min="-50" max="50" v-model="blur" />
+
+          <label>spread (box only): {{ spread }}px; </label>
+          <input type="range" min="-50" max="50" v-model="spread" />
+
+          <label>shadow color:</label>
+          <input type="text" v-model="shadowColor" />
+
+          <label>background color:</label>
+          <input type="text" v-model="backgroundColor" />
+
+          <label>text color:</label>
+          <input type="text" v-model="textColor" />
+
+          <label>box color:</label>
+          <input type="text" v-model="boxColor" />
+
+          <label style="display:inline">inset: </label>
+          <input type="checkbox" v-model="inset" />
+        </div>
+        <div class="buttons-container">
+          <button type="button" @click.prevent="reset" >Reset</button>
+          <button type="button" @click.prevent="copy" >Copy</button>
+        </div>
+      </section>
+
+      <section class="output">
+        <div class="text-container" :style="getTextContainerStyles">
+          <div class="text">
+            <p :style="getTextStyles">Example Text</p>
+          </div>
+        </div>
+        <div class="box-container" :style="getBoxContainerStyles">
+          <div class="box" :style="getBoxStyles"></div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
