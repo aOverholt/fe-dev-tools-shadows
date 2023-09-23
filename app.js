@@ -64,15 +64,21 @@ let vm = Vue.createApp({
       },
 
       async copyBoxShadow() {
-         let text = ``
-         if (this.inset === true) {
-            text = `box-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.spread}px ${this.shadowColor} inset"\ntext-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.shadowColor}"`
-         } else {
-            text = `box-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.spread}px ${this.shadowColor}"\ntext-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.shadowColor}"`
-         }
+         let text = `box-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.spread}px ${this.shadowColor}`
+         // end the box-shadow value
+         this.inset? text+= ' inset"' : text+= '"'
+         
          await navigator.clipboard.writeText(text)
 
-         alert('CSS copied to clipboard!')
+         alert('box-shadow copied to clipboard!')
+      },
+
+      async copyTextShadow() {
+         let text = `text-shadow: "${this.hOffset}px ${this.vOffset}px ${this.blur}px ${this.shadowColor}"`
+         
+         await navigator.clipboard.writeText(text)
+
+         alert('text-shadow copied to clipboard!')
       }
    }
 })

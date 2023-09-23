@@ -78,6 +78,10 @@ html {
  
  .buttons-container {
   margin: 20px auto;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
  }
 
  button {
