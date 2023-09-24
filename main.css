@@ -23,6 +23,8 @@ h2 {
   font-size: 2.5rem;
   margin: 4vw auto;
   width: 100%;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--color-accent-1);
 }
 
 main {
