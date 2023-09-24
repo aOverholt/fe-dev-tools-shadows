@@ -2,14 +2,15 @@
 <html>
 
 <head>
-  <title>CSS3 Box Shadow Playground</title>
+  <title>Shadows | FE Dev Tools</title>
   <link rel="stylesheet" type="text/css" href="main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <div id="app">
     <h2>CSS3 Box Shadow Playground</h2>
-    <main>
+    <main class="container">
       <section class="settings">
         <div class="settings-container">
 
@@ -20,7 +21,7 @@
           <input type="range" min="-50" max="50" v-model="vOffset" />
 
           <label>blur: {{ blur }}px; </label>
-          <input type="range" min="-50" max="50" v-model="blur" />
+          <input type="range" min="0" max="50" v-model="blur" />
 
           <label>spread (box only): {{ spread }}px; </label>
           <input type="range" min="-50" max="50" v-model="spread" />
