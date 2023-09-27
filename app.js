@@ -59,8 +59,12 @@ let vm = Vue.createApp({
          this.vOffset = 0;
          this.blur = 0;
          this.spread = 0;
-         this.color = '#000';
+         this.shadowColor = "#000";
+         this.backgroundColor ='#AFE1AF';
+         this.textColor = 'black';
+         this.boxColor = 'black';
          this.inset = false;
+         this.color = '#000';
       },
 
       async copyBoxShadow() {
